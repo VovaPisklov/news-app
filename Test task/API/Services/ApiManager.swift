@@ -13,15 +13,13 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     // MARK: - Private properties
-    private let urlAdress = "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/main.json"
-    
     private init() {}
 }
 
 // MARK: - Extension
 extension NetworkManager {
-    func fetchData(completion: @escaping (News?) -> Void) {
-        guard let url = URL(string: urlAdress) else { return }
+    func fetchDataNews(url: String, completion: @escaping (News?) -> Void) {
+        guard let url = URL(string: url) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
@@ -38,6 +36,30 @@ extension NetworkManager {
             }
         }.resume()
     }
+    
+
+
+
+    func fetchDataPost(url: String, completion: @escaping (Post?) -> Void) {
+        guard let url = URL(string: url) else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                print(error?.localizedDescription ?? "Description not found")
+                return
+            }
+            do {
+                print(data)
+                let PostClass = try JSONDecoder().decode(Post.self, from: data)
+                DispatchQueue.main.async {
+                    completion(PostClass)
+                }
+            } catch let error {
+                print(error)
+            }
+        }.resume()
+    }
+    
 }
 
 

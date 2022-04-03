@@ -65,7 +65,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="previewText" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A53-Gw-vNr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="previewText" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A53-Gw-vNr">
                                             <rect key="frame" x="16" y="46" width="288" height="49"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -159,10 +159,36 @@
                     <view key="view" contentMode="scaleToFill" id="Mlr-tl-wdj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui1-Oh-ma5">
+                                <rect key="frame" x="5" y="49" width="310" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGp-IR-V9T">
+                                <rect key="frame" x="10" y="80" width="300" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IPv-Cm-at3"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IPv-Cm-at3" firstAttribute="trailing" secondItem="ui1-Oh-ma5" secondAttribute="trailing" constant="5" id="3lN-RI-quO"/>
+                            <constraint firstItem="gGp-IR-V9T" firstAttribute="leading" secondItem="IPv-Cm-at3" secondAttribute="leading" constant="10" id="3ol-M1-lt0"/>
+                            <constraint firstItem="ui1-Oh-ma5" firstAttribute="leading" secondItem="IPv-Cm-at3" secondAttribute="leading" constant="5" id="6r4-tB-kXs"/>
+                            <constraint firstItem="ui1-Oh-ma5" firstAttribute="top" secondItem="IPv-Cm-at3" secondAttribute="top" constant="5" id="M2Q-St-SsF"/>
+                            <constraint firstItem="IPv-Cm-at3" firstAttribute="trailing" secondItem="gGp-IR-V9T" secondAttribute="trailing" constant="10" id="Qbx-Ie-1xS"/>
+                            <constraint firstItem="gGp-IR-V9T" firstAttribute="top" secondItem="ui1-Oh-ma5" secondAttribute="bottom" constant="10" id="jSX-a8-11D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="ABg-bF-wIm"/>
+                    <connections>
+                        <outlet property="textLabelOutlet" destination="gGp-IR-V9T" id="w7Y-BC-c0O"/>
+                        <outlet property="titleLabelOutlet" destination="ui1-Oh-ma5" id="tSM-xw-oaD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRe-wd-NhV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,11 +12,12 @@ class NewsTableViewController: UITableViewController {
     // MARK: - Private properties
     private let cellIdentifier: String = "Cell"
     private var news: [miniPost] = []
-    
+    private let urlAdress = "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/main.json"
+
     // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.fetchData { news in
+        NetworkManager.shared.fetchDataNews(url: urlAdress) { news in
             guard let news = news?.posts else { return }
             self.news = news
             self.tableView.reloadData()
