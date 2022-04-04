@@ -13,6 +13,7 @@
 		8052DA3727F4639900DD8657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8052DA3527F4639900DD8657 /* Main.storyboard */; };
 		8052DA3927F4639A00DD8657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8052DA3827F4639A00DD8657 /* Assets.xcassets */; };
 		8052DA3C27F4639A00DD8657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8052DA3A27F4639A00DD8657 /* LaunchScreen.storyboard */; };
+		80D44DA227FBA70500BD6E25 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D44DA127FBA70500BD6E25 /* SortViewController.swift */; };
 		80F2354F27F5BAC400B1EBF0 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F2354E27F5BAC400B1EBF0 /* NewsTableViewController.swift */; };
 		80F2355127F5BB0700B1EBF0 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F2355027F5BB0700B1EBF0 /* PostViewController.swift */; };
 		80F2355927F5C04B00B1EBF0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F2355827F5C04B00B1EBF0 /* Post.swift */; };
@@ -29,6 +30,7 @@
 		8052DA3827F4639A00DD8657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8052DA3B27F4639A00DD8657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8052DA3D27F4639A00DD8657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D44DA127FBA70500BD6E25 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		80F2354E27F5BAC400B1EBF0 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		80F2355027F5BB0700B1EBF0 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		80F2355827F5C04B00B1EBF0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				80F2354E27F5BAC400B1EBF0 /* NewsTableViewController.swift */,
 				80F2355027F5BB0700B1EBF0 /* PostViewController.swift */,
+				80D44DA127FBA70500BD6E25 /* SortViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				80F2355B27F5C05E00B1EBF0 /* News.swift in Sources */,
 				80F2355927F5C04B00B1EBF0 /* Post.swift in Sources */,
+				80D44DA227FBA70500BD6E25 /* SortViewController.swift in Sources */,
 				8038300E27F8AD720048B436 /* NewsTableViewCell.swift in Sources */,
 				80F2355127F5BB0700B1EBF0 /* PostViewController.swift in Sources */,
 				80F2356027F5D36A00B1EBF0 /* ApiManager.swift in Sources */,

@@ -17,7 +17,7 @@ struct PostClass: Codable {
     let title, text: String?
     let images: [String]?
     let likesCount: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case postID = "postId"
         case timeshamp, title, text, images

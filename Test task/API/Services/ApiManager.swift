@@ -7,12 +7,8 @@
 
 import Foundation
 
-class NetworkManager {
-    
-    // MARK: - Public properties
+final class NetworkManager {
     static let shared = NetworkManager()
-    
-    // MARK: - Private properties
     private init() {}
 }
 
@@ -37,9 +33,6 @@ extension NetworkManager {
         }.resume()
     }
     
-
-
-
     func fetchDataPost(url: String, completion: @escaping (Post?) -> Void) {
         guard let url = URL(string: url) else { return }
         
@@ -49,7 +42,6 @@ extension NetworkManager {
                 return
             }
             do {
-                print(data)
                 let PostClass = try JSONDecoder().decode(Post.self, from: data)
                 DispatchQueue.main.async {
                     completion(PostClass)
@@ -59,11 +51,4 @@ extension NetworkManager {
             }
         }.resume()
     }
-    
 }
-
-
-
-
-
-

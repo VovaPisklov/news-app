@@ -7,42 +7,38 @@
 
 import UIKit
 
-class PostViewController: UIViewController {
+final class PostViewController: UIViewController {
     @IBOutlet weak var titleLabelOutlet: UILabel!
-    @IBOutlet weak var textLabelOutlet: UILabel!
+    @IBOutlet weak var previewTextViewOutlet: UITextView!
+    @IBOutlet weak var likesCountLabelOutlet: UILabel!
+    @IBOutlet weak var timeshampLabelOutlet: UILabel!
     
     var postID: Int = 0
-    // MARK: - Private properties
+    
     private var post: PostClass?
     private var urlAdress = "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/posts/[id].json"
     
-    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
         urlAdress = "https://raw.githubusercontent.com/aShaforostov/jsons/master/api/posts/\(postID).json"
         
-        print(urlAdress)
-
-        
         NetworkManager.shared.fetchDataPost(url: urlAdress) { post in
             guard let post = post?.post else { return }
-            self.post = post
             
+            //time display setting
+            let locale = NSLocale.current
+            let dateFormater = DateFormatter()
+            dateFormater.locale = locale
+            dateFormater.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM.dd.yyyy HH:mm", options: 0, locale: locale)
+            let date: Date = Date(timeIntervalSince1970: Double(post.timeshamp ?? 0) )
+            let dateStr = dateFormater.string(from: date)
+            
+            self.post = post
             self.titleLabelOutlet.text = post.title
-            self.textLabelOutlet.text = post.text
+            self.previewTextViewOutlet.text = post.text
+            self.likesCountLabelOutlet.text = "🖤 \(post.likesCount ?? 0)"
+            self.timeshampLabelOutlet.text = dateStr
         }
-        
-
     }
-        /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

@@ -17,7 +17,7 @@ struct miniPost: Codable {
     let postID, timeshamp: Int?
     let title, previewText: String?
     let likesCount: Int?
-
+    
     enum CodingKeys: String, CodingKey {
         case postID = "postId"
         case timeshamp, title
